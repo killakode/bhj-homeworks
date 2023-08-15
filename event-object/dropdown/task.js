@@ -3,7 +3,7 @@ let menuItem = Array.from(document.querySelectorAll('.dropdown__item'));
 
 function closeAndOpenMenu() {
     let listMenu = document.querySelector('.dropdown__list')
-    listMenu.classList.contains('dropdown__list_active') ? listMenu.classList.remove('dropdown__list_active') : listMenu.classList.add('dropdown__list_active');
+    listMenu.classList.toggle('dropdown__list_active');
 };
 
 menuItem.forEach(function (e) {
