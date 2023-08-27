@@ -1,20 +1,20 @@
-let book = document.querySelector('.book');
+let book = document.querySelector('div.book');
 
 
-let fonstSizes = [...document.querySelectorAll('.font-size')];
+let fonstSizes = [...document.querySelectorAll('a.font-size')];
 
 let changeFontSize = function () {
-    fonstSizes.forEach(elem => {
-        elem.addEventListener('click', (event) => {
+    fonstSizes.forEach(element => {
+        element.addEventListener('click', (event) => {
             event.preventDefault();
-            fonstSizes.forEach(elem => {
-                elem.classList.remove('font-size_active');
+            fonstSizes.forEach(element => {
+                element.classList.remove('font-size_active');
             });
-            elem.classList.add('font-size_active');
-            if(elem.classList.contains('font-size_small')) {
+            element.classList.add('font-size_active');
+            if(element.classList.contains('font-size_small')) {
                 book.classList.add('book_fs-small');
                 book.classList.remove('book_fs-big');
-            } else if(elem.classList.contains('font-size_big')) {
+            } else if(element.classList.contains('font-size_big')) {
                 book.classList.add('book_fs-big');
                 book.classList.remove('book_fs-small');
             } else {
