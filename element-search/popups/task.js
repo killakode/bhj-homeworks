@@ -3,11 +3,15 @@ let modalSuccess = document.querySelector('#modal_success');
 let modalClose = document.querySelectorAll(".modal__close");
 let showSuccess = document.querySelector(".show-success");
 
-mainModal.className = "modal modal_active";
+mainModal.classList.add("modal_active");
 
-modalClose.onclick = function () {
-  mainModal.className = "modal";
-}
+modalClose.forEach(button => {
+  button.onclick = function() {
+    let modal = button.closest('.modal');
+    modal.classList.remove('modal_active');
+  }
+
+}) 
 
 showSuccess.onclick = function (){
   mainModal.className = "modal";
